@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.estel.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.estel.com" xmlns:intf="http://services.estel.com" xmlns:tns1="http://balance.support.services.estel.com" xmlns:tns2="http://estelservice.topup.support.services.estel.com" xmlns:tns3="http://bankdetails.support.services.estel.com" xmlns:tns4="http://transquery.support.services.estel.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.estel.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://balance.support.services.estel.com"/>
+   <import namespace="http://estelservice.topup.support.services.estel.com"/>
+   <import namespace="http://transquery.support.services.estel.com"/>
+   <import namespace="http://bankdetails.support.services.estel.com"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <element name="getBalance">
+    <complexType>
+     <sequence>
+      <element name="balanceRequest" type="tns1:BalanceRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getBalanceResponse">
+    <complexType>
+     <sequence>
+      <element name="getBalanceReturn" type="tns1:BalanceResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTopup">
+    <complexType>
+     <sequence>
+      <element name="topupRequest" type="tns2:TopupRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTopupResponse">
+    <complexType>
+     <sequence>
+      <element name="getTopupReturn" type="tns2:TopupResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getBankDetails">
+    <complexType>
+     <sequence>
+      <element name="bankDetailsRequest" type="tns3:BankDetailsRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getBankDetailsResponse">
+    <complexType>
+     <sequence>
+      <element name="getBankDetailsReturn" type="tns3:BankDetailsResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="checklength">
+    <complexType>
+     <sequence>
+      <element name="strtocheck" type="xsd:string"/>
+      <element name="strlength" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="checklengthResponse">
+    <complexType>
+     <sequence>
+      <element name="checklengthReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isNumericForMobile">
+    <complexType>
+     <sequence>
+      <element name="checkstr" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isNumericForMobileResponse">
+    <complexType>
+     <sequence>
+      <element name="isNumericForMobileReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTransQuery">
+    <complexType>
+     <sequence>
+      <element name="transQueryRequest" type="tns4:TransQueryRequest"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getTransQueryResponse">
+    <complexType>
+     <sequence>
+      <element name="getTransQueryReturn" type="tns4:TransQueryResponse"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_tns4_TransQueryRecordDetail">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="tns4:TransQueryRecordDetail"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://balance.support.services.estel.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://services.estel.com"/>
+   <import namespace="http://estelservice.topup.support.services.estel.com"/>
+   <import namespace="http://transquery.support.services.estel.com"/>
+   <import namespace="http://bankdetails.support.services.estel.com"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="BalanceRequest">
+    <sequence>
+     <element name="agentCode" nillable="true" type="xsd:string"/>
+     <element name="mpin" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="BalanceResponse">
+    <sequence>
+     <element name="agentcode" nillable="true" type="xsd:string"/>
+     <element name="agentname" nillable="true" type="xsd:string"/>
+     <element name="source" nillable="true" type="xsd:string"/>
+     <element name="destination" nillable="true" type="xsd:string"/>
+     <element name="agenttransid" nillable="true" type="xsd:string"/>
+     <element name="vendorcode" nillable="true" type="xsd:string"/>
+     <element name="amount" nillable="true" type="xsd:string"/>
+     <element name="transid" nillable="true" type="xsd:string"/>
+     <element name="resultcode" nillable="true" type="xsd:string"/>
+     <element name="resultdescription" nillable="true" type="xsd:string"/>
+     <element name="requestcts" nillable="true" type="xsd:string"/>
+     <element name="responsects" nillable="true" type="xsd:string"/>
+     <element name="clienttype" nillable="true" type="xsd:string"/>
+     <element name="responsevalue" nillable="true" type="xsd:string"/>
+     <element name="comments" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://estelservice.topup.support.services.estel.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://services.estel.com"/>
+   <import namespace="http://balance.support.services.estel.com"/>
+   <import namespace="http://transquery.support.services.estel.com"/>
+   <import namespace="http://bankdetails.support.services.estel.com"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="TopupRequest">
+    <sequence>
+     <element name="agentCode" nillable="true" type="xsd:string"/>
+     <element name="mpin" nillable="true" type="xsd:string"/>
+     <element name="destination" nillable="true" type="xsd:string"/>
+     <element name="amount" nillable="true" type="xsd:string"/>
+     <element name="productCode" nillable="true" type="xsd:string"/>
+     <element name="comments" nillable="true" type="xsd:string"/>
+     <element name="agenttransid" nillable="true" type="xsd:string"/>
+     <element name="type" nillable="true" type="xsd:string"/>
+     <element name="mobilenumber" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="TopupResponse">
+    <sequence>
+     <element name="agentCode" nillable="true" type="xsd:string"/>
+     <element name="source" nillable="true" type="xsd:string"/>
+     <element name="vendortransid" nillable="true" type="xsd:string"/>
+     <element name="vendorcode" nillable="true" type="xsd:string"/>
+     <element name="productcode" nillable="true" type="xsd:string"/>
+     <element name="destination" nillable="true" type="xsd:string"/>
+     <element name="type" nillable="true" type="xsd:string"/>
+     <element name="agenttransid" nillable="true" type="xsd:string"/>
+     <element name="amount" nillable="true" type="xsd:string"/>
+     <element name="pramt" nillable="true" type="xsd:string"/>
+     <element name="poamt" nillable="true" type="xsd:string"/>
+     <element name="transid" nillable="true" type="xsd:string"/>
+     <element name="walletBalance" nillable="true" type="xsd:string"/>
+     <element name="preWalletBalance" nillable="true" type="xsd:string"/>
+     <element name="fee" nillable="true" type="xsd:string"/>
+     <element name="processingfee" nillable="true" type="xsd:string"/>
+     <element name="range" nillable="true" type="xsd:string"/>
+     <element name="servicetax" nillable="true" type="xsd:string"/>
+     <element name="ecess" nillable="true" type="xsd:string"/>
+     <element name="hcess" nillable="true" type="xsd:string"/>
+     <element name="entax" nillable="true" type="xsd:string"/>
+     <element name="vat" nillable="true" type="xsd:string"/>
+     <element name="tax" nillable="true" type="xsd:string"/>
+     <element name="clienttype" nillable="true" type="xsd:string"/>
+     <element name="resultcode" nillable="true" type="xsd:string"/>
+     <element name="resultdescription" nillable="true" type="xsd:string"/>
+     <element name="requestcts" nillable="true" type="xsd:string"/>
+     <element name="responsects" nillable="true" type="xsd:string"/>
+     <element name="responseValue" nillable="true" type="xsd:string"/>
+     <element name="comments" nillable="true" type="xsd:string"/>
+     <element name="smsval" nillable="true" type="xsd:string"/>
+     <element name="oprwallet" nillable="true" type="xsd:string"/>
+     <element name="preoprwallet" nillable="true" type="xsd:string"/>
+     <element name="customerId" nillable="true" type="xsd:string"/>
+     <element name="customerAccountId" nillable="true" type="xsd:string"/>
+     <element name="refillId" nillable="true" type="xsd:string"/>
+     <element name="pgAuthId" nillable="true" type="xsd:string"/>
+     <element name="pgtransname" nillable="true" type="xsd:string"/>
+     <element name="servicename" nillable="true" type="xsd:string"/>
+     <element name="posCode" nillable="true" type="xsd:string"/>
+     <element name="servicetype" nillable="true" type="xsd:string"/>
+     <element name="pgtransId" nillable="true" type="xsd:string"/>
+     <element name="channelId" nillable="true" type="xsd:string"/>
+     <element name="validity" nillable="true" type="xsd:string"/>
+     <element name="pre_balance" nillable="true" type="xsd:string"/>
+     <element name="post_balance" nillable="true" type="xsd:string"/>
+     <element name="circleid" nillable="true" type="xsd:string"/>
+     <element name="state" nillable="true" type="xsd:string"/>
+     <element name="distributerid" nillable="true" type="xsd:string"/>
+     <element name="authId" nillable="true" type="xsd:string"/>
+     <element name="userId" nillable="true" type="xsd:string"/>
+     <element name="address" nillable="true" type="xsd:string"/>
+     <element name="mobilenumber" nillable="true" type="xsd:string"/>
+     <element name="customerName" nillable="true" type="xsd:string"/>
+     <element name="totalUnits" nillable="true" type="xsd:string"/>
+     <element name="unitsCost" nillable="true" type="xsd:string"/>
+     <element name="unitsVat" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://bankdetails.support.services.estel.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://services.estel.com"/>
+   <import namespace="http://balance.support.services.estel.com"/>
+   <import namespace="http://estelservice.topup.support.services.estel.com"/>
+   <import namespace="http://transquery.support.services.estel.com"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="BankDetailsRequest">
+    <sequence>
+     <element name="agentcode" nillable="true" type="xsd:string"/>
+     <element name="clienttype" nillable="true" type="xsd:string"/>
+     <element name="vendorcode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="BankDetailsResponse">
+    <sequence>
+     <element name="agentcode" nillable="true" type="xsd:string"/>
+     <element name="bankDetailList" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="clienttype" nillable="true" type="xsd:string"/>
+     <element name="recordCount" nillable="true" type="xsd:string"/>
+     <element name="requestcts" nillable="true" type="xsd:string"/>
+     <element name="responsects" nillable="true" type="xsd:string"/>
+     <element name="resultcode" nillable="true" type="xsd:string"/>
+     <element name="resultdescription" nillable="true" type="xsd:string"/>
+     <element name="transid" nillable="true" type="xsd:string"/>
+     <element name="vendorcode" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://services.estel.com"/>
+   <import namespace="http://balance.support.services.estel.com"/>
+   <import namespace="http://estelservice.topup.support.services.estel.com"/>
+   <import namespace="http://transquery.support.services.estel.com"/>
+   <import namespace="http://bankdetails.support.services.estel.com"/>
+   <complexType name="Vector">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://transquery.support.services.estel.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://services.estel.com"/>
+   <import namespace="http://balance.support.services.estel.com"/>
+   <import namespace="http://estelservice.topup.support.services.estel.com"/>
+   <import namespace="http://bankdetails.support.services.estel.com"/>
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <complexType name="TransQueryRequest">
+    <sequence>
+     <element name="agentCode" nillable="true" type="xsd:string"/>
+     <element name="mpin" nillable="true" type="xsd:string"/>
+     <element name="rtransid" nillable="true" type="xsd:string"/>
+     <element name="agenttransid" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="TransQueryRecordDetail">
+    <sequence>
+     <element name="agenttransid" nillable="true" type="xsd:string"/>
+     <element name="resultcode" nillable="true" type="xsd:string"/>
+     <element name="resultdescription" nillable="true" type="xsd:string"/>
+     <element name="responseCTS" nillable="true" type="xsd:string"/>
+     <element name="rtransid" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="TransQueryResponse">
+    <sequence>
+     <element name="agentcode" nillable="true" type="xsd:string"/>
+     <element name="clienttype" nillable="true" type="xsd:string"/>
+     <element name="comments" nillable="true" type="xsd:string"/>
+     <element name="responsects" nillable="true" type="xsd:string"/>
+     <element name="resultcode" nillable="true" type="xsd:string"/>
+     <element name="resultdescription" nillable="true" type="xsd:string"/>
+     <element name="transid" nillable="true" type="xsd:string"/>
+     <element name="vendorcode" nillable="true" type="xsd:string"/>
+     <element name="transQueryDetailArray" nillable="true" type="impl:ArrayOf_tns4_TransQueryRecordDetail"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getTransQueryResponse">
+
+      <wsdl:part element="impl:getTransQueryResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBankDetailsResponse">
+
+      <wsdl:part element="impl:getBankDetailsResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTopupRequest">
+
+      <wsdl:part element="impl:getTopup" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="isNumericForMobileRequest">
+
+      <wsdl:part element="impl:isNumericForMobile" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="checklengthRequest">
+
+      <wsdl:part element="impl:checklength" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="checklengthResponse">
+
+      <wsdl:part element="impl:checklengthResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBankDetailsRequest">
+
+      <wsdl:part element="impl:getBankDetails" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBalanceResponse">
+
+      <wsdl:part element="impl:getBalanceResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTopupResponse">
+
+      <wsdl:part element="impl:getTopupResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getBalanceRequest">
+
+      <wsdl:part element="impl:getBalance" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTransQueryRequest">
+
+      <wsdl:part element="impl:getTransQuery" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="isNumericForMobileResponse">
+
+      <wsdl:part element="impl:isNumericForMobileResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="EstelServices">
+
+      <wsdl:operation name="getBalance">
+
+         <wsdl:input message="impl:getBalanceRequest" name="getBalanceRequest"/>
+
+         <wsdl:output message="impl:getBalanceResponse" name="getBalanceResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTopup">
+
+         <wsdl:input message="impl:getTopupRequest" name="getTopupRequest"/>
+
+         <wsdl:output message="impl:getTopupResponse" name="getTopupResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBankDetails">
+
+         <wsdl:input message="impl:getBankDetailsRequest" name="getBankDetailsRequest"/>
+
+         <wsdl:output message="impl:getBankDetailsResponse" name="getBankDetailsResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checklength">
+
+         <wsdl:input message="impl:checklengthRequest" name="checklengthRequest"/>
+
+         <wsdl:output message="impl:checklengthResponse" name="checklengthResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isNumericForMobile">
+
+         <wsdl:input message="impl:isNumericForMobileRequest" name="isNumericForMobileRequest"/>
+
+         <wsdl:output message="impl:isNumericForMobileResponse" name="isNumericForMobileResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTransQuery">
+
+         <wsdl:input message="impl:getTransQueryRequest" name="getTransQueryRequest"/>
+
+         <wsdl:output message="impl:getTransQueryResponse" name="getTransQueryResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="EstelServicesSoapBinding" type="impl:EstelServices">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getBalance">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBalanceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBalanceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTopup">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTopupRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTopupResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getBankDetails">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getBankDetailsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getBankDetailsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checklength">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="checklengthRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="checklengthResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isNumericForMobile">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isNumericForMobileRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isNumericForMobileResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTransQuery">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTransQueryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTransQueryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="EstelServicesService">
+
+      <wsdl:port binding="impl:EstelServicesSoapBinding" name="EstelServices">
+
+         <wsdlsoap:address location="http://202.140.50.116/EstelServices/services/EstelServices"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
