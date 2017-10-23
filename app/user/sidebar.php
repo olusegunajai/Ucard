@@ -46,8 +46,8 @@
         <li class="treeview">
 		  <a href="#"><i class="fa fa-database text-yellow"></i> <span>TopUp</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
-            <li><a href="newservice.php">New Service Schedule</a></li>
-            <li><a href="topup.php">TopUp Service</a></li>
+             <li><a href="topup.php">TopUp Service</a></li>
+           <li><a href="newservice.php">TopUp Schedule</a></li>
           </ul>
 		</li>
         <li class="treeview">
