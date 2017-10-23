@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_service_profile" value="name:profileID;datatype:int,name:profile_name;datatype:string,name:productcode;datatype:string,name:SPID;datatype:int,name:profile_desc;datatype:string,name:profile_ref;datatype:string,name:contact;datatype:string,name:profile_cat;datatype:string,name:profile_level;datatype:string,name:reccurence;datatype:string,name:amount;datatype:string,name:created_user;datatype:string,name:created_date;datatype:string,name:mod_user;datatype:string,name:mod_date;datatype:string" />
+	<infoitem key="UD_topupTransaction" value="name:productcodes;datatype:string,name:destinations;datatype:string,name:amounts;datatype:string,name:resultdescription;datatype:string,name:comments;datatype:string,name:created_date;datatype:string" />
+	<infoitem key="UD_transactions" value="name:productcodes;datatype:string,name:destinations;datatype:string,name:amounts;datatype:string,name:resultdescription;datatype:string,name:comments;datatype:string,name:created_date;datatype:string" />
+</info>
